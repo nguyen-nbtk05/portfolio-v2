@@ -1,6 +1,6 @@
 export default function About() {
   return (
-    <div className="flex w-full flex-col gap-6 bg-white px-8 pb-6 pt-16 transition-colors duration-300 dark:bg-[#0A0A0A]">
+    <div className="flex w-full flex-col gap-5 bg-white px-8 pb-6 pt-16 transition-colors duration-300 dark:bg-[#0A0A0A]">
       <div className="flex items-center gap-4">
         <h1 className="text-lg font-semibold uppercase tracking-wider text-gray-600 dark:text-gray-400">
           About Me

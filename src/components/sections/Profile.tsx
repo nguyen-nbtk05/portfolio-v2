@@ -79,7 +79,7 @@ export default function Profile() {
   const profile = getProfile();
 
   return (
-    <div className="relative flex h-full flex-col justify-center overflow-visible p-8 text-gray-900 dark:text-gray-100 md:pt-0 lg:pl-20">
+    <div className="relative flex h-full flex-col justify-center overflow-visible p-8 text-gray-900 dark:text-gray-100 md:pt-0 lg:pl-16">
       <div className="flex-grow flex flex-col justify-center">
         <div className="group relative mb-6 w-fit">
           <Image
@@ -110,6 +110,7 @@ export default function Profile() {
               <TechBadge text="Network Infrastructure" />
               &amp;
               <TechBadge text="Cybersecurity" />
+              <br />
               Developing skills in
               <TechBadge text="Python" />
               &amp;

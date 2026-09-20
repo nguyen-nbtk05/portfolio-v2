@@ -17,12 +17,12 @@ export const skillsData: Record<string, Skill[]> = {
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg",
       description: "SQL is a declarative language for storing, querying, and managing data in relational databases such as PostgreSQL, MySQL, and SQLite.",
     },
-    {
+    /*{
       name: "Rust",
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rust/rust-original.svg",
       iconDark: "https://cdn.simpleicons.org/rust/white",
       description: "Rust is a systems programming language focused on performance, memory safety, and concurrency through its ownership model without requiring a garbage collector.",
-    },
+    },*/
     {
       name: "JavaScript",
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
@@ -44,11 +44,6 @@ export const skillsData: Record<string, Skill[]> = {
       name: "Bash",
       icon: "https://cdn.simpleicons.org/gnubash",
       description: "Bash is a command-line shell and scripting language widely used on Unix-like systems to combine commands, automate workflows, and manage environments.",
-    },
-    {
-      name: "Virtualization",
-      icon: "https://cdn.simpleicons.org/proxmox",
-      description: "Virtualization runs multiple isolated virtual machines on a single physical host through hypervisors such as VMware, VirtualBox, and Proxmox.",
     },
   ],
   "Networking & Analysis": [

@@ -3,8 +3,8 @@ export const ArrowToMeDoodle = () => (
     <svg viewBox="0 0 120 80" className="w-28 h-20 fill-none stroke-pink-500 dark:stroke-pink-400 stroke-[3.5px] overflow-visible">
 
       <text
-        x="15"
-        y="18"
+        x="60"
+        y="8"
         className="fill-pink-500 dark:fill-pink-400 font-bold stroke-none"
         stroke="none"
         style={{
@@ -13,7 +13,7 @@ export const ArrowToMeDoodle = () => (
         }}
         transform="rotate(26 50 18)"
       >
-        that&apos;s me! 👋
+        @Nora 🐧 
       </text>
 
       <path
@@ -60,7 +60,7 @@ export const ResumeHighlightDoodle = () => (
         }}
         transform="rotate(-4 65 18)"
       >
-        view my resume!
+        View my resume!
       </text>
 
       <path

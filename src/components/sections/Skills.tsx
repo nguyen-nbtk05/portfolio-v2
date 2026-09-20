@@ -120,7 +120,7 @@ export default function Skills({ projects }: { projects: Project[] }) {
             whileInView="visible"
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: catIndex * 0.1 }}
-            className="flex flex-col gap-4"
+            className="flex flex-col gap-5"
           >
             <h2 className="pl-1 text-sm font-bold uppercase tracking-widest text-gray-400 dark:text-gray-500">{category}</h2>
             <div className="flex flex-wrap gap-3">
