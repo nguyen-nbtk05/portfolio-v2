@@ -19,7 +19,7 @@ function EducationCard({ item }: { item: EducationItem }) {
             </div>
             <div>
               <h2 className="text-xl font-bold text-gray-900 dark:text-white">{item.school}</h2>
-              <h3 className="text-lg font-semibold text-gray-700 dark:text-gray-300">{item.degree}</h3>
+              <h3 className="text-sm whitespace-pre-line font-semibold text-gray-700 dark:text-gray-300">{item.degree}</h3>
             </div>
           </div>
 

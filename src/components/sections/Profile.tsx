@@ -12,7 +12,7 @@ import Magnetic from "../ui/Magnetic";
 import { ArrowToMeDoodle, ResumeHighlightDoodle, UnderlineDoodle } from "./Doodles";
 
 const brandStyles: Record<string, string> = {
-  "Network Infrastructure": "hover:bg-[#61dafb]/10 hover:text-[#61dafb] hover:border-[#61dafb]/40 dark:hover:border-[#61dafb]/60 hover:shadow-[0_0_12px_rgba(97,218,251,0.2)]",
+  "Networking": "hover:bg-[#61dafb]/10 hover:text-[#61dafb] hover:border-[#61dafb]/40 dark:hover:border-[#61dafb]/60 hover:shadow-[0_0_12px_rgba(97,218,251,0.2)]",
   Cybersecurity: "hover:bg-[#e91e63]/10 hover:text-[#e91e63] hover:border-[#e91e63]/40 dark:hover:border-[#e91e63]/60 hover:shadow-[0_0_12px_rgba(233,30,99,0.2)]",
   "Linux systems": "hover:bg-[#6db33f]/10 hover:text-[#6db33f] hover:border-[#6db33f]/40 dark:hover:border-[#6db33f]/60 hover:shadow-[0_0_12px_rgba(109,179,63,0.2)]",
   Python: "hover:bg-[#3776ab]/10 hover:text-[#3776ab] hover:border-[#3776ab]/40 dark:hover:border-[#3776ab]/60 hover:shadow-[0_0_12px_rgba(55,118,171,0.2)]",
@@ -106,17 +106,17 @@ export default function Profile() {
           <div className="mt-4 max-w-lg text-lg leading-loose text-gray-600 dark:text-gray-300">
             <p className="mb-2 whitespace-pre-line text-lg font-semibold text-black dark:text-white">{profile.role}</p>
             <p>
-              Focused on
-              <TechBadge text="Network Infrastructure" />
+              Exploring 
+              <TechBadge text="Networking" />
               &amp;
               <TechBadge text="Cybersecurity" />
               <br />
-              Developing skills in
+              Developing with 
               <TechBadge text="Python" />
-              &amp;
-              <TechBadge text="Linux systems" />
+              &amp; 
+              <TechBadge text="Linux" />
               <br />
-              Passionate about
+              Diving into 
               <TechBadge text="Rust" />
               &amp;
               <TechBadge text="Network Programming" />
