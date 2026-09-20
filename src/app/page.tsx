@@ -12,7 +12,7 @@ export default function HomePage() {
 
   return (
     <>
-      <div className="block lg:hidden">
+      <div className="block pt-28 lg:hidden lg:pt-0">
         <Profile />
       </div>
       <About />
