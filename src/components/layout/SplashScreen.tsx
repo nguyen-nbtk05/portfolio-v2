@@ -4,11 +4,6 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useLenis } from "lenis/react";
 
-/**
- * Splash screen khôi phục từ bản Vite gốc (Loading.jsx):
- * overlay % progress, chỉ hiện lần đầu mỗi session (sessionStorage gate).
- * Content giờ là local sync nên progress chạy giả lập ~1.5s thay vì chờ Firebase.
- */
 const SPLASH_ID = "splash-screen";
 
 function hasSeenSplash(): boolean {
@@ -23,22 +18,17 @@ function markSplashSeen(): void {
   try {
     sessionStorage.setItem("hasLoadedBefore", "true");
   } catch {
-    // sessionStorage không khả dụng: bỏ qua, lần sau hiện lại splash
+
   }
 }
 
-// Inline script chạy ngay khi parser gặp (trước first paint): visitor cũ
-// thì ẩn splash luôn, không chờ hydration → hết nháy 0%.
 const SPLASH_GATE_SCRIPT = `try{if(sessionStorage.getItem("hasLoadedBefore")){var s=document.getElementById("${SPLASH_ID}");if(s)s.style.display="none";}}catch(e){}`;
 export default function SplashScreen() {
   const lenis = useLenis();
-  // Khởi tạo `true` để SSR render splash ngay frame đầu (không nháy home).
-  // Server và client render giống nhau nên không hydration mismatch.
   const [show, setShow] = useState(true);
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    // Đã xem trong session này: tắt ngay, không chạy progress
     if (hasSeenSplash()) {
       setShow(false);
       return;
@@ -73,9 +63,6 @@ export default function SplashScreen() {
 
   return (
     <>
-      {/* Wrapper hứng display:none từ gate script. suppressHydrationWarning để
-          React bỏ qua diff/patch attribute này (pattern của next-themes);
-          motion.div bên trong không bao giờ bị script đụng tới. */}
       <div id={SPLASH_ID} suppressHydrationWarning>
         <AnimatePresence>
           {show && (
@@ -105,8 +92,6 @@ export default function SplashScreen() {
         )}
       </AnimatePresence>
       </div>
-      {/* Gate script đứng SAU div splash: parser gặp là div đã tồn tại,
-          ẩn ngay trước first paint cho visitor cũ */}
       <script dangerouslySetInnerHTML={{ __html: SPLASH_GATE_SCRIPT }} />
     </>
   );

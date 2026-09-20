@@ -31,8 +31,8 @@ function EducationCard({ item }: { item: EducationItem }) {
 
         <ul className="space-y-2 text-gray-600 dark:text-gray-400">
           {item.details.map((detail, i) => (
-            <li key={i} className="flex gap-2 text-sm leading-relaxed">
-              <span className="mt-1.5 text-gray-400 dark:text-gray-600">•</span>
+            <li key={i} className="flex gap-2.5 text-sm leading-relaxed">
+              <span className="mt-2.5 h-1 w-1 shrink-0 rounded-full bg-gray-400 dark:bg-gray-600" />
               {detail}
             </li>
           ))}

@@ -75,7 +75,7 @@ export default function Contact() {
         >
           <div className="pointer-events-none absolute -right-14 -top-14 h-36 w-36 rounded-full bg-blue-100/70 blur-3xl dark:bg-blue-900/20" />
           <div className="relative flex flex-col gap-6">
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white">Let&apos;s build something useful.</h2>
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-white">Let&apos;s connect.</h2>
             <p className="text-lg leading-relaxed text-gray-600 dark:text-gray-400">
               Whether you have a project idea, collaboration in mind, or just want to say hello, I&apos;m happy to connect.
             </p>

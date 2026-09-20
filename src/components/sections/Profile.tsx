@@ -104,7 +104,7 @@ export default function Profile() {
           </div>
 
           <div className="mt-4 max-w-lg text-lg leading-loose text-gray-600 dark:text-gray-300">
-            <p className="mb-2 text-lg font-semibold text-black dark:text-white">{profile.role}</p>
+            <p className="mb-2 whitespace-pre-line text-lg font-semibold text-black dark:text-white">{profile.role}</p>
             <p>
               Focused on
               <TechBadge text="Network Infrastructure" />

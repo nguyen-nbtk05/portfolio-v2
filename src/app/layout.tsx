@@ -74,13 +74,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Providers>
           <SplashScreen />
           <div className="flex min-h-screen flex-col bg-white text-gray-900 transition-colors duration-300 dark:bg-[#0A0A0A] dark:text-gray-100">
-            <div className="flex-1 sm:px-28">
+            <div className="flex-1 sm:px-24">
               <div className="flex min-h-full flex-col border-x border-solid border-gray-200 bg-white transition-colors duration-300 dark:border-[#1F1F1F] dark:bg-[#0A0A0A] lg:flex-row">
-                <aside className="hidden lg:block lg:h-screen lg:w-2/5 lg:sticky lg:top-0">
+                <aside className="hidden lg:block lg:h-screen lg:w-[43%] lg:sticky lg:top-0">
                   <Profile />
                 </aside>
 
-                <main className="pb-20 lg:w-3/5 lg:pb-0">
+                <main className="pb-20 lg:w-[57%] lg:pb-0">
                   <Navbar />
                   {children}
                 </main>

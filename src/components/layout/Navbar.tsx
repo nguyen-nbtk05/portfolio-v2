@@ -4,7 +4,7 @@ import ThemeToggle from "../ui/ThemeToggle";
 
 export default function Navbar() {
   return (
-    <nav className="fixed right-6 top-14 z-50 flex gap-4 transition-all duration-300 md:right-48 md:top-5">
+    <nav className="fixed right-6 top-14 z-50 flex gap-4 transition-all duration-300 md:right-44 md:top-5">
       <Magnetic>
         <Link
           href="/"
