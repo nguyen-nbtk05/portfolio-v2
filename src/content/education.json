@@ -1,0 +1,13 @@
+[
+  {
+    "school": "Da Lat University",
+    "degree": "Bachelor of Engineering in Computer Networks and Data Communications",
+    "duration": "2023 - Present",
+    "details": [
+      "Pursuing a Bachelor of Engineering focused on computer networks and data communications.",
+      "Coursework and labs spanning Linux administration, network security, and system hardening.",
+      "Hands-on projects in infrastructure automation."
+    ],
+    "skills": ["Computer Networks", "Linux", "Network Security", "Python"]
+  }
+]
