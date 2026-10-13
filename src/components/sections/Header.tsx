@@ -7,7 +7,7 @@ export default function Header() {
 
 
   return (
-    <div className="relative flex flex-col gap-8 p-4 text-black dark:text-white md:px-8 md:pt-16">
+    <div className="relative flex flex-col gap-8 px-8 py-4 text-black dark:text-white md:px-8 md:pt-16">
       <div className="grid w-full grid-cols-1 gap-6 md:grid-cols-2">
         <div className="flex flex-col gap-4">
           <div className="flex items-center gap-4">
