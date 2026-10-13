@@ -8,12 +8,12 @@ export const ArrowToMeDoodle = () => (
         className="fill-pink-500 dark:fill-pink-400 font-bold stroke-none"
         stroke="none"
         style={{
-          fontFamily: "'Caveat', cursive",
+          fontFamily: "var(--font-caveat), cursive",
           fontSize: "21px",
         }}
         transform="rotate(26 50 18)"
       >
-        @Nora 🐧 
+        @Nora
       </text>
 
       <path
@@ -30,19 +30,23 @@ export const ArrowToMeDoodle = () => (
   </div>
 );
 
-export const UnderlineDoodle = () => (
-  <div className="w-full relative py-1 pointer-events-none select-none">
-    <svg viewBox="0 0 220 20" className="w-full h-5 fill-none stroke-purple-500 dark:stroke-purple-400 stroke-[3px] overflow-visible">
+export const UnderlineDoodle = ({
+  className = "stroke-purple-500 dark:stroke-purple-400",
+}: { className?: string } = {}) => (
+  <span className="block w-full relative py-1 pointer-events-none select-none">
+    <svg viewBox="0 0 220 20" preserveAspectRatio="none" className={`w-full h-5 fill-none ${className} stroke-[3px] overflow-visible`}>
       <path
         d="M 5 8 C 55 12, 110 5, 215 8"
+        vectorEffect="non-scaling-stroke"
         strokeLinecap="round"
       />
       <path
         d="M 15 13 C 70 17, 130 11, 205 12"
+        vectorEffect="non-scaling-stroke"
         strokeLinecap="round"
       />
     </svg>
-  </div>
+  </span>
 );
 
 export const ResumeHighlightDoodle = () => (
@@ -50,17 +54,17 @@ export const ResumeHighlightDoodle = () => (
     <svg viewBox="0 0 130 60" className="w-full h-full fill-none stroke-amber-500 dark:stroke-amber-400 stroke-[2.5px] overflow-visible">
 
       <text
-        x="45"
+        x="50"
         y="10"
         className="fill-amber-500 dark:fill-amber-400 font-bold stroke-none"
         stroke="none"
         style={{
-          fontFamily: "'Caveat', cursive",
+          fontFamily: "var(--font-caveat), cursive",
           fontSize: "17px",
         }}
         transform="rotate(-4 65 18)"
       >
-        View my resume!
+        View resume
       </text>
 
       <path

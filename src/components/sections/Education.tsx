@@ -56,7 +56,7 @@ export default function Education() {
   const educationData = getEducation();
 
   return (
-    <div className="flex w-full flex-col gap-6 bg-white px-8 py-10 transition-colors duration-300 dark:bg-[#0A0A0A]">
+    <div className="flex w-full flex-col gap-6 bg-white px-8 py-4 transition-colors duration-300 dark:bg-[#0A0A0A]">
       <div className="flex items-center gap-4">
         <h1 className="text-lg font-semibold uppercase tracking-wider text-gray-600 dark:text-gray-400">Education</h1>
         <div className="h-[1px] flex-grow bg-gray-100 dark:bg-[#1F1F1F]" />

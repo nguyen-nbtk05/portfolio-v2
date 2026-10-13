@@ -11,14 +11,14 @@ export default function Projects({ projects }: { projects: Project[] }) {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [showAll, setShowAll] = useState(false);
 
-  if (projects.length === 0) return <div className="px-8 py-20">No projects yet.</div>;
+  if (projects.length === 0) return <div className="px-8 py-4">No projects yet.</div>;
 
   const displayedProjects = showAll ? projects : projects.slice(0, 4);
   const stack = selectedProject ? normalizeTechStack(selectedProject.techStack) : [];
   const featuresList = selectedProject?.features ?? [];
 
   return (
-    <div className="flex w-full flex-col gap-2 px-8 py-16 text-black dark:text-white">
+    <div className="flex w-full flex-col gap-2 px-8 py-4 text-black dark:text-white">
       <div className="flex items-center gap-4">
         <h1 className="font-semibold uppercase tracking-wider text-gray-600 dark:text-gray-400 text-lg">Recent Projects</h1>
         <div className="h-[1px] flex-grow bg-gray-100 dark:bg-[#1F1F1F]" />

@@ -1,6 +1,6 @@
 import { getProjects } from "@/lib/content";
 import Profile from "@/components/sections/Profile";
-import About from "@/components/sections/About";
+import Header from "@/components/sections/Header";
 import Skills from "@/components/sections/Skills";
 import Projects from "@/components/sections/Projects";
 import Education from "@/components/sections/Education";
@@ -15,7 +15,7 @@ export default function HomePage() {
       <div className="block pt-28 lg:hidden lg:pt-0">
         <Profile />
       </div>
-      <About />
+      <Header />
       <Skills projects={projects} />
       <Projects projects={projects} />
       <GithubGraphLazy />

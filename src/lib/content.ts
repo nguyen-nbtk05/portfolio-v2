@@ -4,10 +4,12 @@ import matter from "gray-matter";
 import {
   BlogSchema,
   EducationItemSchema,
+  FeaturedItemSchema,
   ProfileSchema,
   ProjectSchema,
   type Blog,
   type EducationItem,
+  type FeaturedItem,
   type Profile,
   type Project,
 } from "./types";
@@ -91,4 +93,11 @@ function readJson<T>(file: string, schema: { parse: (d: unknown) => T }): T {
 
 export function getProfile(): Profile {
   return readJson("profile.json", ProfileSchema);
+}
+
+export function getFeatured(): FeaturedItem[] {
+  const arr = JSON.parse(
+    fs.readFileSync(path.join(CONTENT_DIR, "featured.json"), "utf-8"),
+  ) as unknown[];
+  return arr.map((x) => FeaturedItemSchema.parse(x));
 }

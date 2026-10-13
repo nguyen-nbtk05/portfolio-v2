@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { Caveat, Hanken_Grotesk } from "next/font/google";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import Providers from "@/components/layout/Providers";
@@ -17,6 +18,19 @@ import {
   UMAMI_WEBSITE_ID,
 } from "@/lib/site";
 import "./globals.css";
+
+const hankenGrotesk = Hanken_Grotesk({
+  subsets: ["latin", "vietnamese"],
+  style: ["normal", "italic"],
+  display: "swap",
+  variable: "--font-hanken-grotesk",
+});
+
+const caveat = Caveat({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-caveat",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -70,17 +84,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
   return (
     <html lang="en" suppressHydrationWarning>
-      <body>
+      <body className={`${hankenGrotesk.variable} ${caveat.variable}`}>
         <Providers>
           <SplashScreen />
           <div className="flex min-h-screen flex-col bg-white text-gray-900 transition-colors duration-300 dark:bg-[#0A0A0A] dark:text-gray-100">
-            <div className="flex-1 sm:px-24">
-              <div className="flex min-h-full flex-col border-x border-solid border-gray-200 bg-white transition-colors duration-300 dark:border-[#1F1F1F] dark:bg-[#0A0A0A] lg:flex-row">
-                <aside className="hidden lg:block lg:h-screen lg:w-[45%] lg:sticky lg:top-0">
+            <div className="flex-1 sm:px-28">
+              <div className="flex min-h-screen flex-col border-x border-solid border-gray-200 bg-white transition-colors duration-300 dark:border-[#1F1F1F] dark:bg-[#0A0A0A] lg:flex-row">
+                <aside className="hidden lg:block lg:h-screen lg:w-[46%] lg:sticky lg:top-0 overflow-y-auto">
                   <Profile />
                 </aside>
 
-                <main className="pb-20 lg:w-[55%] lg:pb-0">
+                <main className="pb-20 lg:w-[54%] lg:pb-0">
                   <Navbar />
                   {children}
                 </main>

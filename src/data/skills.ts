@@ -22,12 +22,12 @@ export const skillsData: Record<string, Skill[]> = {
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rust/rust-original.svg",
       iconDark: "https://cdn.simpleicons.org/rust/white",
       description: "Rust is a systems programming language focused on performance, memory safety, and concurrency through its ownership model without requiring a garbage collector.",
-    },*/
+    },
     {
       name: "JavaScript",
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
       description: "JavaScript is the core scripting language of the web for dynamic browser interfaces and server-side runtimes such as Node.js.",
-    },
+    },*/
     {
       name: "TypeScript",
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg",
@@ -90,10 +90,10 @@ export const skillsData: Record<string, Skill[]> = {
       iconDark: "https://cdn.simpleicons.org/github/white",
       description: "GitHub is a cloud platform built around Git for hosting repositories, reviewing code, tracking work, publishing documentation, and collaborating on software.",
     },
-    {
+    /*{
       name: "Selenium",
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/selenium/selenium-original.svg",
       description: "Selenium is a browser-automation framework for controlling web browsers programmatically, widely used for testing and dynamic web crawling.",
-    },
+    },*/
   ],
 };

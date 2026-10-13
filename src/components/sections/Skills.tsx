@@ -105,7 +105,7 @@ export default function Skills({ projects }: { projects: Project[] }) {
   const activeRelatedProjects = selectedSkill ? getRelatedProjects(projects, selectedSkill.name) : [];
 
   return (
-    <div className="flex w-full flex-col gap-8 bg-white px-8 pb-10 pt-6 transition-colors duration-300 dark:bg-[#0A0A0A]">
+    <div className="flex w-full flex-col gap-4 bg-white px-8 py-4 transition-colors duration-300 dark:bg-[#0A0A0A]">
       <div className="flex items-center gap-4">
         <h1 className="text-lg font-semibold uppercase tracking-wider text-gray-600 dark:text-gray-400">Technical Skills</h1>
         <div className="h-[1px] flex-grow bg-gray-100 dark:bg-[#1F1F1F]" />
@@ -120,9 +120,9 @@ export default function Skills({ projects }: { projects: Project[] }) {
             whileInView="visible"
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: catIndex * 0.1 }}
-            className="flex flex-col gap-5"
+            className={`flex flex-col gap-5 ${catIndex % 2 === 1 ? "2xl:pl-4" : ""}`}
           >
-            <h2 className="pl-1 text-sm font-bold uppercase tracking-widest text-gray-400 dark:text-gray-500">{category}</h2>
+            <h2 className="text-sm font-bold uppercase tracking-widest text-gray-400 dark:text-gray-500">{category}</h2>
             <div className="flex flex-wrap gap-3">
               {skills.map((skill) => (
                 <Magnetic key={skill.name} scale={0.25}>

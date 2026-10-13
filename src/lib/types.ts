@@ -58,3 +58,10 @@ export const ProfileSchema = z.object({
 });
 
 export type Profile = z.infer<typeof ProfileSchema>;
+
+export const FeaturedItemSchema = z.object({
+  title: z.string(),
+  image: z.string(),
+});
+
+export type FeaturedItem = z.infer<typeof FeaturedItemSchema>;
