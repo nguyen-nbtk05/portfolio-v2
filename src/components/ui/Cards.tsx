@@ -30,7 +30,7 @@ function CardContent({ title, description, techStack, image }: Required<Pick<Car
   return (
     <>
       {image ? (
-        <div className="relative h-48 w-full overflow-hidden rounded-t-md bg-gray-100 dark:bg-gray-800">
+        <div className="relative h-40 w-full overflow-hidden rounded-t-md bg-gray-100 dark:bg-gray-800 sm:h-48">
           <Image
             src={image}
             alt={`${title} project screenshot`}
@@ -42,24 +42,24 @@ function CardContent({ title, description, techStack, image }: Required<Pick<Car
         </div>
       ) : null}
 
-      <div className="flex flex-grow flex-col p-4 text-left">
-        <h2 className="text-xl font-bold text-gray-900 dark:text-white">{title}</h2>
+      <div className="flex flex-grow flex-col p-3 text-left sm:p-4">
+        <h2 className="text-lg font-bold text-gray-900 dark:text-white sm:text-xl">{title}</h2>
         <p className="mt-1 line-clamp-3 flex-grow text-sm leading-relaxed text-gray-600 dark:text-gray-400">
           {description}
         </p>
       </div>
 
-      <div className="flex flex-wrap gap-2 p-4 pt-0">
+      <div className="flex flex-wrap gap-1.5 px-3 pb-3 sm:gap-2 sm:px-4 sm:pb-4">
         {visible.map((tech) => (
           <span
             key={tech}
-            className="whitespace-nowrap rounded-md bg-gray-200 px-3 py-1 text-sm text-gray-800 dark:bg-gray-800 dark:text-gray-300"
+            className="max-w-full whitespace-normal break-words rounded-md bg-gray-200 px-2 py-1 text-xs text-gray-800 dark:bg-gray-800 dark:text-gray-300 sm:whitespace-nowrap sm:px-3 sm:text-sm"
           >
             {tech}
           </span>
         ))}
         {rest > 0 && (
-          <span className="whitespace-nowrap rounded-md bg-gray-200 px-3 py-1 text-sm text-gray-800 dark:bg-gray-800 dark:text-gray-300">
+          <span className="max-w-full whitespace-normal rounded-md bg-gray-200 px-2 py-1 text-xs text-gray-800 dark:bg-gray-800 dark:text-gray-300 sm:whitespace-nowrap sm:px-3 sm:text-sm">
             +{rest}
           </span>
         )}
@@ -80,7 +80,7 @@ export default function Cards({
   className = "",
 }: CardsProps) {
   const stack = normalizeTechStack(techStack);
-  const commonClasses = `flex w-full flex-col rounded-md border border-solid border-gray-200 bg-white text-black shadow-sm transition-all hover:border-gray-300 dark:border-[#1F1F1F] dark:bg-[#0A0A0A] dark:text-gray-100 dark:hover:border-gray-600 ${className}`;
+  const commonClasses = `flex min-w-0 w-full flex-col rounded-md border border-solid border-gray-200 bg-white text-black shadow-sm transition-all hover:border-gray-300 dark:border-[#1F1F1F] dark:bg-[#0A0A0A] dark:text-gray-100 dark:hover:border-gray-600 ${className}`;
   const content: ReactNode = (
     <CardContent title={title} description={description} techStack={stack} image={image} />
   );

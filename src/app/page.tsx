@@ -12,7 +12,7 @@ export default function HomePage() {
 
   return (
     <>
-      <div className="block pt-28 lg:hidden lg:pt-0">
+      <div className="block pt-20 lg:hidden lg:pt-0">
         <Profile />
       </div>
       <Header />

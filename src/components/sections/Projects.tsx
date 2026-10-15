@@ -11,20 +11,20 @@ export default function Projects({ projects }: { projects: Project[] }) {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [showAll, setShowAll] = useState(false);
 
-  if (projects.length === 0) return <div className="px-8 py-4">No projects yet.</div>;
+  if (projects.length === 0) return <div className="px-4 py-4 sm:px-8">No projects yet.</div>;
 
   const displayedProjects = showAll ? projects : projects.slice(0, 4);
   const stack = selectedProject ? normalizeTechStack(selectedProject.techStack) : [];
   const featuresList = selectedProject?.features ?? [];
 
   return (
-    <div className="flex w-full flex-col gap-2 px-8 py-4 text-black dark:text-white">
-      <div className="flex items-center gap-4">
-        <h1 className="font-semibold uppercase tracking-wider text-gray-600 dark:text-gray-400 text-lg">Recent Projects</h1>
+    <div className="flex w-full flex-col gap-2 px-4 py-4 text-black dark:text-white sm:px-8">
+      <div className="flex items-center gap-3 sm:gap-4">
+        <h1 className="text-sm font-semibold uppercase tracking-wider text-gray-600 dark:text-gray-400 sm:text-lg">Recent Projects</h1>
         <div className="h-[1px] flex-grow bg-gray-100 dark:bg-[#1F1F1F]" />
       </div>
 
-      <div className="grid w-full max-w-6xl grid-cols-1 gap-4 md:grid-cols-2">
+      <div className="grid w-full max-w-6xl grid-cols-1 gap-3 sm:gap-4 md:grid-cols-2">
         {displayedProjects.map((project) => (
           <Cards
             key={project.slug}
@@ -72,7 +72,7 @@ export default function Projects({ projects }: { projects: Project[] }) {
             ) : null}
 
             <div className={`relative flex min-h-0 flex-col p-6 md:overflow-y-auto md:p-8 ${selectedProject.image ? "md:w-1/2" : ""}`}>
-              <h3 className="pr-16 text-2xl font-bold text-gray-900 dark:text-white">{selectedProject.title}</h3>
+              <h3 className="pr-10 text-xl font-bold text-gray-900 dark:text-white sm:pr-16 sm:text-2xl">{selectedProject.title}</h3>
               <p className="mt-6 text-sm leading-relaxed text-gray-700 dark:text-gray-300">{selectedProject.description}</p>
 
               {(selectedProject.githubUrl || selectedProject.liveDemoUrl) && (

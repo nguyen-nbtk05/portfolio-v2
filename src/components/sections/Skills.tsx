@@ -48,12 +48,12 @@ function SkillCard({ name, icon, iconDark, onClick }: { name: string; icon: stri
         }
       }}
       aria-label={`View details for ${name}`}
-      className="group relative flex cursor-pointer items-center gap-3 overflow-hidden rounded-md border border-solid border-gray-200 bg-white px-4 py-2.5 shadow-sm transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500/50 dark:border-[#1F1F1F] dark:bg-[#0D0D0D]"
+      className="group relative flex min-h-11 cursor-pointer items-center gap-2 overflow-hidden rounded-md border border-solid border-gray-200 bg-white px-3 py-2 shadow-sm transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500/50 dark:border-[#1F1F1F] dark:bg-[#0D0D0D] sm:gap-3 sm:px-4 sm:py-2.5"
     >
       <motion.img
         src={icon}
         alt={`${name} logo`}
-        className={`h-6 w-6 object-contain ${iconDark ? "dark:hidden" : ""}`}
+        className={`h-5 w-5 shrink-0 object-contain sm:h-6 sm:w-6 ${iconDark ? "dark:hidden" : ""}`}
         whileHover={{ rotate: 6, scale: 1.08 }}
         transition={{ type: "spring", stiffness: 300, damping: 18 }}
       />
@@ -61,12 +61,12 @@ function SkillCard({ name, icon, iconDark, onClick }: { name: string; icon: stri
         <motion.img
           src={iconDark}
           alt={`${name} logo`}
-          className="hidden h-6 w-6 object-contain dark:block"
+          className="hidden h-5 w-5 shrink-0 object-contain dark:block sm:h-6 sm:w-6"
           whileHover={{ rotate: 6, scale: 1.08 }}
           transition={{ type: "spring", stiffness: 300, damping: 18 }}
         />
       ) : null}
-      <span className="text-sm font-medium text-gray-700 transition-colors duration-200 group-hover:text-gray-900 dark:text-gray-300 dark:group-hover:text-white">
+      <span className="text-[13px] font-medium text-gray-700 transition-colors duration-200 group-hover:text-gray-900 dark:text-gray-300 dark:group-hover:text-white sm:text-sm">
         {name}
       </span>
       <span className="pointer-events-none absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 dark:via-white/5" />
@@ -105,13 +105,13 @@ export default function Skills({ projects }: { projects: Project[] }) {
   const activeRelatedProjects = selectedSkill ? getRelatedProjects(projects, selectedSkill.name) : [];
 
   return (
-    <div className="flex w-full flex-col gap-4 bg-white px-8 py-4 transition-colors duration-300 dark:bg-[#0A0A0A]">
-      <div className="flex items-center gap-4">
-        <h1 className="text-lg font-semibold uppercase tracking-wider text-gray-600 dark:text-gray-400">Technical Skills</h1>
+    <div className="flex w-full flex-col gap-4 bg-white px-4 py-4 transition-colors duration-300 dark:bg-[#0A0A0A] sm:px-8">
+      <div className="flex items-center gap-3 sm:gap-4">
+        <h1 className="text-sm font-semibold uppercase tracking-wider text-gray-600 dark:text-gray-400 sm:text-lg">Technical Skills</h1>
         <div className="h-[1px] flex-grow bg-gray-100 dark:bg-[#1F1F1F]" />
       </div>
 
-      <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+      <div className="grid grid-cols-1 gap-6 sm:gap-8 md:grid-cols-2">
         {Object.entries(skillsData).map(([category, skills], catIndex) => (
           <motion.div
             key={category}
@@ -120,10 +120,10 @@ export default function Skills({ projects }: { projects: Project[] }) {
             whileInView="visible"
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: catIndex * 0.1 }}
-            className={`flex flex-col gap-5 ${catIndex % 2 === 1 ? "2xl:pl-4" : ""}`}
+            className={`flex flex-col gap-3 sm:gap-5 ${catIndex % 2 === 1 ? "2xl:pl-4" : ""}`}
           >
-            <h2 className="text-sm font-bold uppercase tracking-widest text-gray-400 dark:text-gray-500">{category}</h2>
-            <div className="flex flex-wrap gap-3">
+            <h2 className="text-xs font-bold uppercase tracking-widest text-gray-400 dark:text-gray-500 sm:text-sm">{category}</h2>
+            <div className="flex flex-wrap gap-2 sm:gap-3">
               {skills.map((skill) => (
                 <Magnetic key={skill.name} scale={0.25}>
                   <SkillCard
@@ -143,13 +143,31 @@ export default function Skills({ projects }: { projects: Project[] }) {
         <Modal label={`${selectedSkill.name} Details`} onClose={() => setSelectedSkill(null)} maxWidth="max-w-4xl">
           <div className="flex min-h-0 flex-1 flex-col overflow-y-auto md:flex-row md:overflow-hidden">
             <div className="flex flex-col border-b border-gray-100 bg-gray-50/50 p-6 dark:border-[#1F1F1F] dark:bg-[#050505]/45 md:w-1/2 md:overflow-y-auto md:border-b-0 md:border-r md:p-8">
-              <div className="mb-6 flex items-center gap-4">
-                <div className="rounded-xl border border-gray-200 bg-white p-3 shadow-sm dark:border-white/5 dark:bg-[#111111]">
-                  <Image src={selectedSkill.icon} alt={`${selectedSkill.name} logo`} width={40} height={40} className="h-10 w-10 object-contain" loading="lazy" />
+              <div className="mb-6 flex items-start gap-3 pr-8 md:items-center md:gap-4 md:pr-0">
+                <div className="shrink-0 rounded-xl border border-gray-200 bg-white p-3 shadow-sm dark:border-white/5 dark:bg-[#111111]">
+                  {/* Simple Icons serves SVGs from URLs without a .svg extension. */}
+                  <Image
+                    src={selectedSkill.icon}
+                    alt={`${selectedSkill.name} logo`}
+                    width={40}
+                    height={40}
+                    className={`h-10 w-10 object-contain ${selectedSkill.iconDark ? "dark:hidden" : ""}`}
+                    unoptimized
+                  />
+                  {selectedSkill.iconDark ? (
+                    <Image
+                      src={selectedSkill.iconDark}
+                      alt={`${selectedSkill.name} logo`}
+                      width={40}
+                      height={40}
+                      className="hidden h-10 w-10 object-contain dark:block"
+                      unoptimized
+                    />
+                  ) : null}
                 </div>
-                <div>
-                  <h3 className="text-2xl font-extrabold text-gray-900 dark:text-white">{selectedSkill.name}</h3>
-                  <span className="mt-1 inline-block rounded-full bg-blue-500/10 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-blue-500">
+                <div className="min-w-0">
+                  <h3 className="text-xl font-extrabold text-gray-900 dark:text-white sm:text-2xl">{selectedSkill.name}</h3>
+                  <span className="mt-1 inline-block max-w-full rounded-full bg-blue-500/10 px-2 py-0.5 text-[9px] font-bold uppercase tracking-wider text-blue-500 sm:text-[10px]">
                     {selectedSkill.category}
                   </span>
                 </div>

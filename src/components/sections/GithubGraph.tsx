@@ -51,14 +51,14 @@ export default function GithubGraph() {
   }, []);
 
   return (
-    <div className="flex w-full flex-col gap-2 p-4 text-black dark:text-white md:px-8">
-      <div className="mb-4 flex items-center gap-4">
-        <h1 className="text-lg font-semibold uppercase tracking-wider text-gray-600 dark:text-gray-400">Github Activities</h1>
+    <div className="flex w-full flex-col gap-2 px-4 py-4 text-black dark:text-white sm:px-8">
+      <div className="mb-3 flex items-center gap-3 sm:mb-4 sm:gap-4">
+        <h1 className="text-sm font-semibold uppercase tracking-wider text-gray-600 dark:text-gray-400 sm:text-lg">Github Activities</h1>
         <div className="h-[1px] flex-grow bg-gray-100 dark:bg-[#1F1F1F]" />
       </div>
 
-      <div className="flex w-full items-center justify-center overflow-hidden rounded-md border-2 border-solid border-gray-200 bg-white p-4 dark:border-[#1F1F1F] dark:bg-transparent">
-        <div className="flex w-full justify-center overflow-x-auto">
+      <div className="flex w-full items-center justify-center overflow-hidden rounded-md border-2 border-solid border-gray-200 bg-white p-3 dark:border-[#1F1F1F] dark:bg-transparent sm:p-4">
+        <div className="flex min-w-0 w-full justify-center overflow-x-auto [&_.react-activity-calendar\_\_count]:whitespace-normal sm:[&_.react-activity-calendar\_\_count]:whitespace-nowrap">
           <GitHubCalendar
             ref={calendarRef}
             username="nguyen-nbtk05"

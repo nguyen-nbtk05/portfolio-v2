@@ -2,7 +2,6 @@ import Image from "next/image";
 import {
   RiFacebookCircleFill,
   RiGithubLine,
-  RiInstagramLine,
   RiLinkedinLine,
   RiTwitterXLine,
 } from "@remixicon/react";
@@ -32,7 +31,7 @@ function TechBadge({ text }: { text: string }) {
     "hover:bg-gray-200 dark:hover:bg-gray-700 hover:border-gray-300 dark:hover:border-gray-600";
   return (
     <span
-      className={`mr-1 inline-flex cursor-pointer items-center rounded border-2 border-dotted border-gray-200 bg-gray-100 px-2 py-0.5 align-baseline text-base font-medium text-gray-800 transition-all duration-300 ease-out dark:border-solid dark:border-[#1F1F1F] dark:bg-transparent dark:text-gray-200 ${hoverStyle}`}
+      className={`mr-0.5 inline-flex cursor-pointer items-center whitespace-nowrap rounded border-2 border-dotted border-gray-200 bg-gray-100 px-1.5 py-0.5 align-baseline text-sm font-medium text-gray-800 transition-all duration-300 ease-out dark:border-solid dark:border-[#1F1F1F] dark:bg-transparent dark:text-gray-200 sm:mr-1 sm:px-2 sm:text-base ${hoverStyle}`}
     >
       {text}
     </span>
@@ -42,11 +41,11 @@ function TechBadge({ text }: { text: string }) {
 export function ConnectSection({ className = "" }: { className?: string }) {
   const profile = getProfile();
   const s = profile.social;
-  const linkCls = "block transition-all duration-300 hover:scale-105";
+  const linkCls = "flex min-h-11 min-w-11 items-center justify-center transition-all duration-300 hover:scale-105 sm:block sm:min-h-0 sm:min-w-0 [&>svg]:h-6 [&>svg]:w-6 sm:[&>svg]:h-7 sm:[&>svg]:w-7";
 
   return (
-    <div className={`mt-10 ${className}`}>
-      <div className="flex flex-wrap items-center gap-4">
+    <div className={`mt-6 sm:mt-10 ${className}`}>
+      <div className="-ml-2 flex flex-wrap items-center gap-1 sm:ml-0 sm:gap-4">
         <Magnetic>
           <a
             href={`mailto:${profile.email}`}
@@ -114,30 +113,30 @@ export default function Profile() {
   const secondNameGroup = nameWords.slice(3).join(" ");
 
   return (
-    <div className="relative flex h-full flex-col justify-center overflow-visible p-8 text-gray-900 dark:text-gray-100 md:pt-0 lg:pl-16">
+    <div className="relative flex h-full flex-col justify-center overflow-visible px-6 pb-6 pt-0 text-gray-900 dark:text-gray-100 sm:px-8 sm:pb-8 lg:pl-16">
       <div className="flex-grow flex flex-col justify-center">
-        <div className="group relative mb-2 w-fit">
+        <div className="group relative mb-6 w-fit sm:mb-2">
           <Image
             src={profile.avatar}
             alt={profile.name}
             width={160}
             height={160}
             priority
-            className="pointer-events-none relative z-10 h-40 w-40 select-none rounded-full border-4 border-yellow-400 object-cover"
+            className="pointer-events-none relative z-10 h-36 w-36 select-none rounded-full border-4 border-yellow-400 object-cover sm:h-40 sm:w-40"
           />
-          <div className="pointer-events-none absolute left-[150px] top-[10px] z-20">
+          <div className="pointer-events-none absolute left-[132px] top-[10px] z-20 scale-90 origin-top-left sm:left-[150px] sm:scale-100">
             <ArrowToMeDoodle />
           </div>
         </div>
 
         <div className="text-left">
           <div className="relative mb-4 w-fit">
-            <h1 className="flex flex-wrap gap-x-[0.25em] gap-y-5 pb-1 text-[2rem] font-bold tracking-tight sm:text-[2.4rem]">
+            <h1 className="flex flex-wrap gap-x-[0.25em] gap-y-3 pb-1 text-[clamp(2rem,11.5vw,2.75rem)] font-bold leading-[1.2] tracking-tight sm:gap-y-5 sm:text-[2.4rem] sm:leading-normal">
               <span className="relative max-w-full whitespace-nowrap">
                 {firstNameGroup}
                 <span
                   aria-hidden="true"
-                  className="pointer-events-none absolute bottom-[-18px] left-0 z-10 w-full"
+                  className="pointer-events-none absolute -bottom-3 left-0 z-10 w-full [&>span]:py-0 [&_svg]:h-4 sm:bottom-[-18px] sm:[&>span]:py-1 sm:[&_svg]:h-5"
                 >
                   <UnderlineDoodle className="stroke-blue-500 dark:stroke-blue-400" />
                 </span>
@@ -147,7 +146,7 @@ export default function Profile() {
                   {secondNameGroup}
                   <span
                     aria-hidden="true"
-                    className="pointer-events-none absolute bottom-[-18px] left-0 z-10 w-full"
+                    className="pointer-events-none absolute -bottom-3 left-0 z-10 w-full [&>span]:py-0 [&_svg]:h-4 sm:bottom-[-18px] sm:[&>span]:py-1 sm:[&_svg]:h-5"
                   >
                     <UnderlineDoodle />
                   </span>
@@ -156,16 +155,16 @@ export default function Profile() {
             </h1>
           </div>
 
-          <div className="mt-4 text-lg leading-loose text-gray-600 dark:text-gray-300">
-            <p className="whitespace-pre-line text-xl font-semibold text-black dark:text-white">
+          <div className="mt-5 text-gray-600 dark:text-gray-300 sm:mt-4">
+            <p className="whitespace-pre-line text-xl font-semibold leading-7 text-black dark:text-white">
               {profile.role}
             </p>
           </div>
           <div>
-            <p className="mt-4 whitespace-pre-line text-lg font-semibold text-black dark:text-white">
+            <p className="mt-4 whitespace-pre-line text-base font-semibold text-black dark:text-white sm:text-lg">
               Who am I?
             </p>
-            <p className="mt-1 text-lg leading-relaxed text-gray-600 dark:text-gray-300">
+            <p className="mt-1 text-base leading-8 text-gray-600 dark:text-gray-300 sm:text-lg sm:leading-relaxed">
               An individual with a strong technical inclination and a deep interest in{" "}
               <TechBadge text="Linux systems" />,{" "}
               <TechBadge text="Networking" />and{" "}
@@ -176,12 +175,12 @@ export default function Profile() {
         </div>
       </div>
 
-      <div className="group relative mt-16 w-fit sm:mt-0">
+      <div className="group relative mt-12 w-fit lg:mt-0">
         <a
           href={profile.resumeUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="relative z-10"
+          className="relative z-10 inline-flex min-h-11 items-center sm:min-h-0"
         >
           <TechBadge text="Resume" />
         </a>

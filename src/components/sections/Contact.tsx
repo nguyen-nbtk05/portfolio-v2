@@ -59,9 +59,9 @@ export default function Contact() {
   const isSuccess = status === "success";
 
   return (
-    <div id="contact" className="flex w-full flex-col gap-8 px-8 py-4 text-black dark:text-white">
-      <div className="flex items-center gap-4">
-        <h1 className="text-lg font-semibold uppercase tracking-wider text-gray-600 dark:text-gray-400">Contact</h1>
+    <div id="contact" className="flex w-full flex-col gap-6 px-4 py-4 text-black dark:text-white sm:gap-8 sm:px-8">
+      <div className="flex items-center gap-3 sm:gap-4">
+        <h1 className="text-sm font-semibold uppercase tracking-wider text-gray-600 dark:text-gray-400 sm:text-lg">Contact</h1>
         <div className="h-[1px] flex-grow bg-gray-100 dark:bg-[#1F1F1F]" />
       </div>
 
@@ -71,11 +71,11 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.45 }}
-          className="relative min-w-0 overflow-hidden rounded-xl border border-solid border-gray-200 bg-white p-5 shadow-sm dark:border-[#1F1F1F] dark:bg-[#0A0A0A]"
+          className="relative min-w-0 overflow-hidden rounded-xl border border-solid border-gray-200 bg-white p-4 shadow-sm dark:border-[#1F1F1F] dark:bg-[#0A0A0A] sm:p-5"
         >
           <div className="pointer-events-none absolute -right-14 -top-14 h-36 w-36 rounded-full bg-blue-100/70 blur-3xl dark:bg-blue-900/20" />
-          <div className="relative flex h-full min-w-0 flex-col gap-6">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Let&apos;s connect.</h2>
+          <div className="relative flex h-full min-w-0 flex-col gap-4 sm:gap-6">
+            <h2 className="text-xl font-bold text-gray-900 dark:text-white sm:text-2xl">Let&apos;s connect.</h2>
             <p className="text-base leading-relaxed text-gray-600 dark:text-gray-400">
               Whether you have a project idea, collaboration in mind, or just want to say hello, I&apos;m happy to connect.
             </p>
@@ -121,7 +121,7 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.45, delay: 0.08 }}
-          className="flex min-w-0 w-full flex-col gap-4 rounded-xl border border-solid border-gray-200 bg-white p-5 shadow-sm dark:border-[#1F1F1F] dark:bg-[#0A0A0A]"
+          className="flex min-w-0 w-full flex-col gap-4 rounded-xl border border-solid border-gray-200 bg-white p-4 shadow-sm dark:border-[#1F1F1F] dark:bg-[#0A0A0A] sm:p-5"
         >
           <div className="mb-1 flex items-center gap-2 text-gray-700 dark:text-gray-300">
             <RiMessage3Line size={18} className="text-blue-500" />
